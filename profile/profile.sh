@@ -35,7 +35,7 @@ sudo /usr/bin/yum install -y vim-enhanced
 
 #Change Ethernet interface names to ethX
 sudo /bin/sed -i.org -e "s/rhgb quiet/net.ifnames=0 biosdevname=0 3/" /etc/default/grub 
-sudo usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
+sudo /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
 
 
 echo -e "${COLOR_LIGHT_BLUE}$user's personal configuration is completed.${COLOR_DEFAULT}"
