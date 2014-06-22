@@ -89,11 +89,10 @@ else
     /usr/bin/packstack --gen-answer-file=/root/answer.txt
     
     #Edit Answer file
-    /bin/sed -i.org -e "s/CONFIG_CONTROLLER_HOST=[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\+/CONFIG_CONTROLLER_HOST=$CONT_PRI/" /root/answer.txt
-    /bin/sed -i.org -e "s/CONFIG_COMPUTE_HOSTS==[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\+/CONFIG_COMPUTE_HOSTS=$COMP_PRI/" /root/answer.txt
-    /bin/sed -i.org -e "s/CONFIG_NETWORK_HOSTS=[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\+/CONFIG_NETWORK_HOSTS=$NET_PRI/" /root/answer.txt
-    /bin/sed -i.org -e "s/CONFIG_MYSQL_HOST=[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\+/CONFIG_MYSQL_HOST=$CONT_PRI/" /root/answer.txt
-
+    /bin/sed -i.org -e "s/CONFIG_CONTROLLER_HOST=[a-zA-Z0-9]\+/CONFIG_CONTROLLER_HOST=$CONT_PRI/" /root/answer.txt
+    /bin/sed -i.org -e "s/CONFIG_COMPUTE_HOSTS=[a-zA-Z0-9]\+/CONFIG_COMPUTE_HOSTS=$COMP_PRI/" /root/answer.txt
+    /bin/sed -i.org -e "s/CONFIG_NETWORK_HOSTS=[a-zA-Z0-9]\+/CONFIG_NETWORK_HOSTS=$NET_PRI/" /root/answer.txt
+    /bin/sed -i.org -e "s/CONFIG_MYSQL_HOST=[a-zA-Z0-9]\+/CONFIG_MYSQL_HOST=$CONT_PRI/" /root/answer.txt
     #NOVA CONFIG
     /bin/echo "CONFIG_NOVA_COMPUTE_HOSTS=$NET_PRI" >> /root/answer.txt
 #    /bin/sed -i.org -e "s/CONFIG_NOVA_COMPUTE_HOSTS=[a-zA-Z0-9]\+/CONFIG_NOVA_COMPUTE_HOSTS=$NET_PRI/" /root/answer.txt
