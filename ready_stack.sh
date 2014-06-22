@@ -87,7 +87,7 @@ _SYSCTLCONF_
            
             #install ntp
             /usr/bin/yum install -y ntp
-            /usr/sbin/ntpdate server 0.centos.pool.ntp.org
+            /usr/sbin/ntpdate server 0.fedora.pool.ntp.org
             /sbin/chkconfig ntpd on
             /sbin/service ntpd restart
 
