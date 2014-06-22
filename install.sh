@@ -22,17 +22,17 @@ NIC2='eth2'     #PRIVATE NETWORK NIC
 #NETMASK='255.255.255.0'
 #GATEWAY='192.168.1.1'
 
-#Network node
-NET_PUB='10.0.1.2'
-NET_PRI='10.0.10.2'
-
 #Controller node
-CONT_PUB='10.0.1.3'
-CONT_PRI='10.0.10.3'
+CONT_PUB='10.0.0.11'
+CONT_PRI='10.0.1.11'
+
+#Network node
+NET_PUB='10.0.0.21'
+NET_PRI='10.0.1.21'
 
 #Computer node
-COMP_PUB='10.0.1.4'
-COMP_PRI='10.0.10.4'
+COMP_PUB='10.0.0.31'
+COMP_PRI='10.0.1.31'
 
 
 
@@ -66,6 +66,14 @@ else
     echo -e "${YELLOW}Controller  Node${COLOR_DEFAULT}"
     echo -e "${COLOR_LIGHT_GREEN}PUBLIC  | $NIC1: ${COLOR_YELLOW}$CONT_PUB${COLOR_DEFAULT}"
     echo -e "${COLOR_LIGHT_GREEN}PRIVATE | $NIC2: ${COLOR_YELLOW}$CONT_PRI${COLOR_DEFAULT}"
+
+
+
+    #hostname
+    if [ $HOSTNAME != $H_DEFAULT ]; then
+        echo "$IP $HOST $DOMAIN" >> /etc/hosts
+    fi  
+
 
 
     #----------Install RDO-------------------
