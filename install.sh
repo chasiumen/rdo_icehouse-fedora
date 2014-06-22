@@ -9,8 +9,7 @@
 #variables
 #Dashboard admin password
 PASS='admin'
-MYSQL_PASS='arcueid\$0326'
-
+#MYSQL_PASS='arcueid\$0326'
 
 #NIC
 NIC1='eth1'     #PUBLIC NETWORK NIC
@@ -35,6 +34,12 @@ COMP_PUB='10.0.0.31'
 COMP_PRI='10.0.1.31'
 
 
+
+#HOSTS
+IP='hostname -I'
+HOST='hostname -s'
+DOMAIN='hostname'
+H_DEFAULT='localhost.localdomain'
 
 ##TEXT COLOR
 COLOR_LIGHT_GREEN='\033[1;32m'
