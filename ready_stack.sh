@@ -11,7 +11,7 @@ ARC=$(/bin/uname -m)
 
 OS=$(cat /etc/redhat-release | awk -F ' ' '{print $1}')
 VERSION=$(cat /etc/redhat-release | awk -F ' ' '{print $3}')
-VER_REQ='6.5'
+VER_REQ='20'
 
 ##TEXT COLOR
 COLOR_LIGHT_GREEN='\033[1;32m'
@@ -33,7 +33,7 @@ else
     echo -e "${COLOR_LIGHT_BLUE}ROOT/SUDO run\t\t\t${COLOR_LIGHT_GREEN}[OK]${COLOR_DEFAULT}"
     #Check OS version
     if [ $VERSION != $VER_REQ ] ; then
-        echo -e  "${COLOR_RED}OS must be CentOS 6.5${COLOR_DEFAULT}"
+        echo -e  "${COLOR_RED}OS must be Fedora 20${COLOR_DEFAULT}"
         echo -e "${COLOR_LIGHT_GREEN}$OS, $VERSION${COLOR_DEFAULT}"
         exit 2
     else
