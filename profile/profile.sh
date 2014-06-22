@@ -2,6 +2,11 @@
 user='morinor'
 
 
+IP='hostname -I'
+HOST='hostname -s'
+DOMAIN='hostname'
+H_DEFAULT='localhost.localdomain'
+
 COLOR_LIGHT_GREEN='\033[1;32m'
 COLOR_LIGHT_BLUE='\033[1;34m'
 COLOR_YELLOW='\033[1;33m'
@@ -36,10 +41,13 @@ else
     /bin/chmod 600 /home/$user/.ssh/authorized_keys
     
     #Change Ethernet interface names to ethX
-    /bin/sed -i.org -e "s/rhgb/net.ifnames=0 biosdevname=0/" /etc/default/grub 
+    /bin/sed -i.org -e "s/rhgb quiet/net.ifnames=0 biosdevname=0 3/" /etc/default/grub 
     /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cf
 
-
+    #hostname
+    if [ $HOSTNAME != $H_DEFAULT ]; then
+        echo "$IP $HOST $DOMAIN" >> /etc/hosts
+    fi
 
     echo -e "${COLOR_LIGHT_BLUE}$user's personal configuration is completed.${COLOR_DEFAULT}"
     echo -e "${COLOR_RED}Please reboot the system to apply all of the configuration${COLOR_DEFAULT}"
