@@ -37,10 +37,6 @@ sudo /usr/bin/yum install -y vim-enhanced
 sudo /bin/sed -i.org -e "s/rhgb quiet/net.ifnames=0 biosdevname=0 3/" /etc/default/grub 
 sudo usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cf
 
-#hostname
-if [ $HOSTNAME != $H_DEFAULT ]; then
-    sudo /bin/echo $IP $HOST $DOMAIN >> /etc/hosts
-fi
 
 echo -e "${COLOR_LIGHT_BLUE}$user's personal configuration is completed.${COLOR_DEFAULT}"
 echo -e "${COLOR_RED}Please reboot the system to apply all of the configuration${COLOR_DEFAULT}"
