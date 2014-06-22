@@ -84,18 +84,6 @@ else
     /usr/bin/packstack --gen-answer-file=/root/answer.txt
     
     #Edit Answer file
-    #CINDER
-
-    #MYSQL CONFIG
-#    /bin/sed -i.org -e "s/CONFIG_MYSQL_INSTALL=y/CONFIG_MYSQL_INSTALL=n/" /root/answer.txt
-#    /bin/sed -i.org -e "s/CONFIG_MYSQL_PW=[a-zA-Z0-9]\+/CONFIG_MYSQL_PW=$MYSQL_PASS/" /root/answer.txt
-    
-    #Allow aceess globaly
-    echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '$MYSQL_PASS' WITH GRANT OPTION;" | mysql -u root
-    #change root password 
-    echo "UPDATE mysql.user SET Password = PASSWORD('$MYSQL_PASS') WHERE User = 'root';" | mysql -u root
-    echo "FLUSH PRIVILEGES;" | mysql -u root
-
 
     #NOVA CONFIG
     /bin/sed -i.org -e "s/CONFIG_NOVA_COMPUTE_HOSTS=[a-zA-Z0-9]\+/CONFIG_NOVA_COMPUTE_HOSTS=$NET_PRI/" /root/answer.txt
