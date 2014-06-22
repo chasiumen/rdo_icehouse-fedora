@@ -106,7 +106,7 @@ else
     
     #Network node
     /bin/sed -i.org -e "s/CONFIG_NOVA_NETWORK_HOSTS=[a-zA-Z0-9]\+/CONFIG_NOVA_NETWORK_HOSTS=$NET_PRI/" /root/answer.txt 
-    /bin/sed -i.org -e "s/CONFIG_NEUTRON_SERVER_HOST=[a-zA-Z0-9]\+/CONFIG_NEUTRON_SERVER_HOST=$NET_PRI" /root/answer.txt
+    /bin/sed -i.org -e "s/CONFIG_NEUTRON_SERVER_HOST=[a-zA-Z0-9]\+/CONFIG_NEUTRON_SERVER_HOST=$NET_PRI/" /root/answer.txt
     /bin/sed -i.org -e "s/CONFIG_NEUTRON_L3_HOSTS=[a-zA-Z0-9]\+/CONFIG_NEUTRON_L3_HOSTS=$NET_PRI/" /root/answer.txt
     /bin/sed -i.org -e "s/CONFIG_NEUTRON_DHCP_HOSTS=[a-zA-Z0-9]\+/CONFIG_NEUTRON_DHCP_HOSTS=$NET_PRI/" /root/answer.txt 
     /bin/sed -i.org -e "s/CONFIG_NEUTRON_METADATA_HOSTS=[a-zA-Z0-9]\+/CONFIG_NEUTRON_METADATA_HOSTS=$NET_PRI/" /root/answer.txt
