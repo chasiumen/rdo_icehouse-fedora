@@ -36,9 +36,9 @@ COMP_PRI='10.0.1.31'
 
 
 #HOSTS
-IP='hostname -I'
-HOST='hostname -s'
-DOMAIN='hostname'
+IP=$(hostname -I)
+HOST=$(hostname -s)
+DOMAIN=$(hostname)
 H_DEFAULT='localhost.localdomain'
 
 ##TEXT COLOR
