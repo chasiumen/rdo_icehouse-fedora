@@ -39,7 +39,7 @@ sudo usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cf
 
 #hostname
 if [ $HOSTNAME != $H_DEFAULT ]; then
-    sudo cat << " $IP $HOST $DOMAIN " >> /etc/hosts
+    sudo /bin/echo $IP $HOST $DOMAIN >> /etc/hosts
 fi
 
 echo -e "${COLOR_LIGHT_BLUE}$user's personal configuration is completed.${COLOR_DEFAULT}"
