@@ -36,7 +36,7 @@ else
     /bin/chmod 600 /home/$user/.ssh/authorized_keys
     
     #Change Ethernet interface names to ethX
-    /bin/sed -i.org -e "s/rhgb quiet/net.ifnames=0 biosdevname=0/" /etc/default/grub 
+    /bin/sed -i.org -e "s/rhgb/net.ifnames=0 biosdevname=0/" /etc/default/grub 
     /usr/sbin/grub2-mkconfig -o /boot/grub2/grub.cf
 
 
