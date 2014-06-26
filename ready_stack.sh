@@ -1,6 +1,6 @@
 #!/bin/bash -x
 #Description:
-#Runs Only on Centos 6.5 64bit
+#Runs Only on Fedora 20 64bit
 #This script automatically sets up RDO installable environment
 #such as kernel parameters, RDO repos, EPEL repos, and etc...
 

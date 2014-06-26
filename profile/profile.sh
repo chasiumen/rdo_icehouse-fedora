@@ -21,7 +21,7 @@ COLOR_DEFAULT='\033[0m'
 /bin/cp -f  ./conf/.bashrc /home/$user/.bashrc
 
 #install vim
-sudo /usr/bin/yum install -y vim-enhanced
+sudo /usr/bin/yum install -y vim
 
 #copy vim profile
 /bin/cp -f ./conf/.vimrc /home/$user/.vimrc

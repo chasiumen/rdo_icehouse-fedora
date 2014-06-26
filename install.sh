@@ -135,7 +135,7 @@ else
 
     #Run packstack with customized answer file
     /usr/bin/packstack --answer-file=/root/answer.txt
-    
+#    packstack --allinone --os-ceilometer-install=n --os-cider-install=n --nagios-install=n
     #-----------Create NIC Configuration files-----------------
     #config backup
     /bin/cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0.org
